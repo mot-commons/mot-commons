@@ -5,7 +5,8 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import * as React from "react"
+// import * as React from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
@@ -18,8 +19,9 @@ const SEO = ({ description, lang, meta, title }) => {
           siteMetadata {
             title
             description
-            social {
-              twitter
+            socials {
+              name
+              url
             }
           }
         }
@@ -29,6 +31,13 @@ const SEO = ({ description, lang, meta, title }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
+
+  //get twitter id from the url in sitemetada
+  let twitterId = site.siteMetadata?.socials.filter(function (item, index) {
+    if (item.name == "Twitter")
+      return item.url.substr(item.url.lastIndexOf("/") + 1)
+    else return ""
+  })
 
   return (
     <Helmet
@@ -60,7 +69,8 @@ const SEO = ({ description, lang, meta, title }) => {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata?.social?.twitter || ``,
+          content: twitterId,
+          // content: site.siteMetadata?.social?.twitter || ``,
         },
         {
           name: `twitter:title`,

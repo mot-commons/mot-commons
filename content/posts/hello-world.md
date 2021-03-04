@@ -1,7 +1,13 @@
 ---
-title: Hello World
-date: "2015-05-01T22:12:03.284Z"
-description: "Hello World"
+title: こんにちは世界　Hello World
+slug: /hello-world/
+date: "2021-01-01T22:12:03.284Z"
+description: 記事の概要を書く領域．This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
+image: ../assets/cat.jpg
+caption: キャプションいるなら
+author: Goh Uozumi, /goh-uozumi/
+translators:
+published: "true"
 ---
 
 This is my first post on my new fake blog! How exciting!
@@ -19,7 +25,7 @@ Oh, and here's a great quote from this Wikipedia on
 > salted duck eggs have a briny aroma, a gelatin-like egg white and a
 > firm-textured, round yolk that is bright orange-red in color.
 
-![Chinese Salty Egg](./salty_egg.jpg)
+![Chinese Salty Egg](https://upload.wikimedia.org/wikipedia/commons/thumb/5/51/Redegg3.jpg/400px-Redegg3.jpg)
 
 You can also write code blocks here!
 

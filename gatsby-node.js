@@ -12,6 +12,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `
       {
         allMarkdownRemark(
+          filter: { frontmatter: { published: { eq: "true" } } }
           sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
         ) {
@@ -20,6 +21,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
+            fileAbsolutePath
           }
         }
       }
@@ -34,28 +36,75 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
 
-  const posts = result.data.allMarkdownRemark.nodes
+  //allPosts has all post-types. post, post-en, persons...
+  const allPosts = result.data.allMarkdownRemark.nodes
 
-  // Create blog posts pages
-  // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
-  // `context` is available in the template as a prop and as a variable in GraphQL
+  //Get folder name form absolute-path, ".../content/posts/file.md" to "posts"
+  const getPostType = fileAbsolutePath => {
+    const result = fileAbsolutePath.split("/").filter(e => Boolean(e))
+    return result[result.length - 2]
+  }
+  //Group the allPosts by post-types,
+  //return [ [posts: [[post], [post]...]], [posts-en:[[post],[post]...]] ]
+  const groupBy = (array, getKey) =>
+    Array.from(
+      array.reduce((map, cur, idx, src) => {
+        const key = getKey(cur, idx, src)
+        const list = map.get(key)
+        if (list) list.push(cur)
+        else map.set(key, [cur])
+        return map
+      }, new Map())
+    )
+  // get grouped posts by types as array
+  const groupedPosts = groupBy(allPosts, item =>
+    getPostType(item.fileAbsolutePath)
+  )
 
-  if (posts.length > 0) {
-    posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id
-      const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+  if (groupedPosts.length > 0) {
+    groupedPosts.forEach((posts, i) => {
+      posts[1].forEach((post, index) => {
+        const previousPostId = index === 0 ? null : posts[1][index - 1].id
+        const nextPostId =
+          index === posts[1].length - 1 ? null : posts[1][index + 1].id
 
-      createPage({
-        path: post.fields.slug,
-        component: blogPost,
-        context: {
-          id: post.id,
-          previousPostId,
-          nextPostId,
-        },
+        // Create blog posts page
+        // `context` is available in the template as a prop and as a variable in GraphQL
+        createPage({
+          path: post.fields.slug,
+          component: blogPost,
+          context: {
+            id: post.id,
+            previousPostId,
+            nextPostId,
+          },
+        })
       })
     })
   }
+
+  // const posts = result.data.allMarkdownRemark.nodes
+
+  // // Create blog posts pages
+  // // But only if there's at least one markdown file found at "content/blog" (defined in gatsby-config.js)
+  // // `context` is available in the template as a prop and as a variable in GraphQL
+
+  // if (posts.length > 0) {
+  //   posts.forEach((post, index) => {
+  //     const previousPostId = index === 0 ? null : posts[index - 1].id
+  //     const nextPostId = index === posts.length - 1 ? null : posts[index + 1].id
+
+  //     createPage({
+  //       path: post.fields.slug,
+  //       component: blogPost,
+  //       context: {
+  //         id: post.id,
+  //         previousPostId,
+  //         nextPostId,
+  //       },
+  //     })
+  //   })
+  // }
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
@@ -63,11 +112,21 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
 
   if (node.internal.type === `MarkdownRemark`) {
     const value = createFilePath({ node, getNode })
-
+    //get folder-name inc md-files, and get locale such as ja or en
+    const fileNode = getNode(node.parent)
+    let tmp = fileNode.sourceInstanceName.split("-")
+    const locale = tmp[1] ? tmp[1] : "ja"
+    // set slug with locale, ["ja" is /name-of-file/] and ["en" is /en/name-of-file/]
     createNodeField({
       name: `slug`,
       node,
-      value,
+      value: locale == "ja" ? value : "/" + locale + value,
+    })
+
+    createNodeField({
+      node,
+      name: `locale`,
+      value: locale,
     })
   }
 }
@@ -85,7 +144,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     type SiteSiteMetadata {
       author: Author
       siteUrl: String
-      social: Social
+      socials: [Social]
     }
 
     type Author {
@@ -94,7 +153,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
 
     type Social {
-      twitter: String
+      name: String
+      url: String
     }
 
     type MarkdownRemark implements Node {
