@@ -9,10 +9,10 @@ author: Goh Uozumi, / goh-uozumi /
 translators:
 - Translated name, / slug-this-person /
 - Honnyaku Two, / slug-this-person /
-published: "true"
+published: 'true'
 ---
 
-This is the Japanese version. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
+English. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia.
 
 ## On deer horse aboard tritely yikes and much
 
@@ -64,9 +64,7 @@ Embed Spotify
 
 Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean. A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.
 
-<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/244475642&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;">
-<a href="https://soundcloud.com/ghostly" title="ghostly" target="_blank" style="color: #cccccc; text-decoration: none;">ghostly</a> · <a href="https://soundcloud.com/ghostly/beacon-better-or-worse-1" title="Beacon - Better Or Worse" target="_blank" style="color: #cccccc; text-decoration: none;">Beacon - Better Or Worse</a>
-</div>
+<iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/244475642&amp;color=%23ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"> <a href="https://soundcloud.com/ghostly" title="ghostly" target="_blank" style="color: #cccccc; text-decoration: none;">ghostly</a> · <a href="https://soundcloud.com/ghostly/beacon-better-or-worse-1" title="Beacon - Better Or Worse" target="_blank" style="color: #cccccc; text-decoration: none;">Beacon - Better Or Worse</a> </div>
 
 Embed Soundcloud
 
