@@ -69,7 +69,7 @@ There is a tide in the affairs of men. Which, taken at the flood, leads on to fo
 
 ## 展覧会の図録
 
-<a class="card" href="http://www.nadiff-online.com/?pid=156665274" target="_blank" rel="noopener noreferrer">   <img src="../assets/motannual2020/motannual2020-catalog.jpg" alt="The catalog of MOT Annual 2020 - Invisible Powers" style="width:100%">   <div class="container">     <h4>書籍 ― MOTアニュアル2020「透明な力たち INVISIBLE POWERS」</h4>      <p>日本語と英語で書かれた展覧会の図録は Nadiff-onlineショップ からご購入いただけます．</p>     <p>2,200円</p>    </div> </a>
+<a class="card" href="http://www.nadiff-online.com/?pid=156665274" target="_blank" rel="noopener noreferrer">   <img src="../assets/motannual2020/motannual2020-catalog.jpg" alt="The catalog of MOT Annual 2020 - Invisible Powers" style="width:100%">   <div class="container">     <h4>書籍 ― MOTアニュアル2020「透明な力たち INVISIBLE POWERS」</h4>      <p>このコミットで編集できる？日本語と英語で書かれた展覧会の図録は Nadiff-onlineショップ からご購入いただけます．</p>     <p>2,200円</p>    </div> </a>
 
 <!-- ![The catalog of MOT Annual 2020 - Invisible Powers](../assets/motannual2020/motannual2020-catalog.jpg) -->
 
@@ -94,7 +94,7 @@ Machine translation.... Donations can be collected for each article. Feel free t
 
 <!-- この下にDonorboxの埋め込みコードをいれる -->
 
-<iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="https://donorbox.org/embed/mot-commons-goh?default_interval=o&amp;amount=300" style="max-width: 500px; min-width: 310px; max-height:none!important" width="100%"></iframe> <comment></comment>
+<iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="https://donorbox.org/embed/mot-commons-goh-en" style="max-width: 500px; min-width: 250px; max-height:none!important" width="100%"></iframe>
 
 寄付のサービスは，上記のように [Donorbox](https://donorbox.org) を想定しています．個人でアカウントを作れて，日本円やドルの複数通貨に対応しています．
  このデモページでは，日本語と英語でそれぞれ別の寄付ボタンをつくっています（言語を切り替えると色が変わるのでわかると思います）．翻訳者に分配する時に，どの寄付ボタンから入金されたかを判別するためです．
