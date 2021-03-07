@@ -6,7 +6,7 @@ description: 記事の概要を書く領域．This is a custom description for S
 image: ../assets/motannual2020/motannual2020-top.jpg
 caption: ここにキャプションを画像をいれられる
 author: Goh Uozumi, /goh-uozumi/
-#translators: 'null'
+translators: 'null'
 support: "支援する"
 published: "true"
 ---
@@ -96,7 +96,7 @@ There is a tide in the affairs of men. Which, taken at the flood, leads on to fo
 
 このサイトの特徴は，コミュニティ翻訳を受け入れられることです．Gitlocalizeを使って第三者が翻訳に参加できます．日本語を元記事として，その多言語化を不特定多数の人が行えます．  
 ここには翻訳を募る場合に，それへの簡易説明と詳細リンクを入れます．  
-これ👉 [Gitlocalize](https://gitlocalize.com/repo/5833)
+これ👉 [Gitlocalize](https://gitlocalize.com/repo/5849)
 
 ### B．コーヒーを奢る
 
