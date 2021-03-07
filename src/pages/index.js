@@ -53,15 +53,6 @@ const BlogIndex = ({ data, location }) => {
           const author = post.frontmatter.author?.split(",")
           const title = post.frontmatter.title || post.fields.slug
           const featuredImage = getImage(post.frontmatter.image)
-          // const featuredImage = post.frontmatter.image ? (
-          //   <GatsbyImage //Image
-          //     image={post.frontmatter.image?.childImageSharp?.gatsbyImageData}
-          //     // fluid={post.frontmatter.image.childImageSharp.fluid}
-          //     className="cover-image"
-          //   />
-          // ) : (
-          //   ""
-          // )
 
           return (
             <li key={post.fields.slug}>
@@ -71,7 +62,6 @@ const BlogIndex = ({ data, location }) => {
                 itemType="http://schema.org/Article"
               >
                 <Link to={post.fields.slug} itemProp="url">
-                  {/* {featuredImage} */}
                   <GatsbyImage
                     image={featuredImage}
                     alt={"cover image of " + title}
@@ -79,7 +69,7 @@ const BlogIndex = ({ data, location }) => {
                   />
 
                   <header>
-                    {author ? <h3>{author[0] || ""}</h3> : ""}
+                    {author && <h3>{author[0] || ""}</h3>}
                     <h2>
                       <span itemProp="headline">{title}</span>
                     </h2>

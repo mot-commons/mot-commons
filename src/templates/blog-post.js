@@ -7,7 +7,7 @@ import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 // import Image from "gatsby-image"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 import DrawerMenu from "../components/menu"
 
 const BlogPostTemplate = ({ data, location }) => {
@@ -20,38 +20,30 @@ const BlogPostTemplate = ({ data, location }) => {
   const slug = post.fields.slug.replace("/" + locale, "")
   let bioSlugs = null
   const author = post.frontmatter.author?.split(",")
-
-  bioSlugs = author && author[1] ? author[1].replace(/\s+/g, "") : "" //frstly, add author's slug after removing whitespace
-  const translators = post.frontmatter.translators?.map(translator => {
+  bioSlugs = author && author[1] ? author[1].replace(/\s+/g, "") : "anonymous" //frstly, add author's slug after removing whitespace
+  let translators = JSON.parse(post.frontmatter.translators)
+  translators = translators?.map(translator => {
+    if (translator == "null") {
+      return null
+    }
     const result = translator.split(",") //translator has "Name, /slug/"
     if (bioSlugs) bioSlugs += "|"
     if (result[1]) {
       bioSlugs += "/" + locale //add current locale. "/ja", "/en", etc.
-      bioSlugs += result[1] ? result[1].replace(/\s+/g, "") : ""
+      bioSlugs += result[1].replace(/\s+/g, "")
     }
     return result[0]
   })
+  translators = translators && translators[0] ? translators : null
   const reg = new RegExp("/" + defaultLang, "g") //remove "ja"(def-lang) from slugs
   bioSlugs = bioSlugs.replace(reg, "")
   // console.log("bioSlugs ", bioSlugs)
 
-  const coverCaption = post.frontmatter.caption ? post.frontmatter.caption : ""
+  const coverCaption = post.frontmatter.caption && post.frontmatter.caption
   const coverImage = getImage(post.frontmatter.image)
-  // const coverImage = post.frontmatter.image ? (
-  //   <figure className="gatsby-resp-image-figure">
-  //     <Image fluid={post.frontmatter.image.childImageSharp.fluid} />
-  //     <figcaption className="gatsby-resp-image-figcaption">
-  //       {coverCaption}
-  //     </figcaption>
-  //   </figure>
-  // ) : (
-  //   ""
-  // )
 
-  const tableOfContents = post.tableOfContents ? (
-    <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} /> //convert html-string to tag-elements
-  ) : (
-    ""
+  const tableOfContents = post.tableOfContents && (
+    <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
   )
 
   return (
@@ -94,7 +86,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <p>{post.frontmatter.description || ""}</p>
           <div className="post-info">
             <div className="author">
-              {author ? (
+              {author && (
                 <React.Fragment>
                   <a
                     href={"#" + author[0].toLowerCase().replace(" ", "-")}
@@ -103,16 +95,28 @@ const BlogPostTemplate = ({ data, location }) => {
                     {author[0] || ""}
                   </a>
                 </React.Fragment>
-              ) : (
-                ""
               )}
               <br />
               <span>
                 {post.frontmatter.date || ""} • {post.timeToRead || ""} min read
               </span>
+              <div className="support-btn">
+                {post.frontmatter.support && (
+                  <a href={"#" + post.frontmatter.support}>
+                    <small>{post.frontmatter.support}</small>
+                    <StaticImage
+                      alt="Support"
+                      className=""
+                      layout="constrained"
+                      width={24}
+                      src="../../content/assets/icons/give.svg"
+                    />
+                  </a>
+                )}
+              </div>
             </div>
             <div className="translators">
-              {translators ? (
+              {translators && (
                 <React.Fragment>
                   <small>Translated by</small> <br />
                   <ul>
@@ -130,8 +134,6 @@ const BlogPostTemplate = ({ data, location }) => {
                     ))}
                   </ul>
                 </React.Fragment>
-              ) : (
-                ""
               )}
             </div>
           </div>
@@ -235,6 +237,7 @@ export const pageQuery = graphql`
         caption
         author
         translators
+        support
       }
       tableOfContents
       fields {

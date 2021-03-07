@@ -64,7 +64,7 @@ const Bio = ({ slugs, locale }) => {
                 # }
               }
             }
-            socials
+            links
           }
         }
       }
@@ -72,8 +72,8 @@ const Bio = ({ slugs, locale }) => {
   `)
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
-  const socials = data.site.siteMetadata?.socials
+  const siteAuthor = data.site.siteMetadata?.author
+  const siteSocials = data.site.siteMetadata?.socials
   const siteAvatar = getImage(data?.siteAvatar) //data?.siteAvatar?.childImageSharp?.fixed
 
   //get selected data with regex slugs, "/name-one/|/name-two/"
@@ -96,16 +96,6 @@ const Bio = ({ slugs, locale }) => {
             supportors[0].includes(b.frontmatter.role.toLowerCase())
           )
         )
-
-      // return array.map(post => {
-      //   if (post.frontmatter.role.toLowerCase() == "staff") {
-      //     return { staff: post }
-      //   } else if (post.frontmatter.role.toLowerCase() == "translator") {
-      //     return { translator: post }
-      //   } else {
-      //     return { autor: post }
-      //   }
-      // })
     }
     return null
     // data.allFile.edges.find(({ node }) => src === node.relativePath)
@@ -140,22 +130,24 @@ const Bio = ({ slugs, locale }) => {
                   <br />
                   <small>- {post.frontmatter.role}</small>
                   <ul>
-                    {post.frontmatter.socials?.map(social => {
-                      const result = social.split(",")
-                      const name = result[0]
-                      const url = result[1].replace(/\s+/g, "") //remove whitespace
-                      return (
-                        <li key={name}>
-                          <a
-                            href={url}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="btn btn-border-shadow btn-border-shadow--yellow"
-                          >
-                            {name}
-                          </a>
-                        </li>
-                      )
+                    {JSON.parse(post.frontmatter.links)?.map(link => {
+                      if (link != "null") {
+                        const result = link.split(",")
+                        const name = result[0]
+                        const url = result[1].replace(/\s+/g, "") //remove whitespace
+                        return (
+                          <li key={name}>
+                            <a
+                              href={url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="btn btn-border-shadow btn-border-shadow--yellow"
+                            >
+                              {name}
+                            </a>
+                          </li>
+                        )
+                      }
                     })}
                   </ul>
                 </div>
@@ -171,7 +163,9 @@ const Bio = ({ slugs, locale }) => {
           </div>
         )
       })}
-      {posts ? <hr /> : ""}
+
+      {posts && <hr />}
+
       {/* show the admin bio at the bottom*/}
       <div className="bio">
         <div className="bio-header">
@@ -179,20 +173,20 @@ const Bio = ({ slugs, locale }) => {
             <GatsbyImage //Image
               image={siteAvatar}
               // fixed={siteAvatar}
-              alt={"avatar of" + author?.name || ``}
+              alt={"avatar of" + siteAuthor?.name || ``}
               className="bio-avatar"
               imgStyle={{
                 borderRadius: `50%`,
               }}
             />
           )}
-          {author?.name && (
+          {siteAuthor?.name && (
             <div className="bio-info">
-              <strong>{author.name}</strong>| {author?.summary || null}
+              <strong>{siteAuthor.name}</strong>| {siteAuthor?.summary || null}
               {` `}
               <br />
               <ul>
-                {socials.map(social => (
+                {siteSocials.map(social => (
                   <li key={social.name}>
                     <a
                       href={social.url}

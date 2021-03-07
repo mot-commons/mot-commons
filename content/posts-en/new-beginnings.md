@@ -1,14 +1,12 @@
 ---
-title: Japanese title --New Beginnings
-slug: "/ new-beginnings /"
+title: English - New Beginnings
+slug: "/new-beginnings/"
 date: '2015-05-28T22: 40: 32.169Z'
 description: ENGLISH....This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the front matter.
 image: "../assets/motannual2020/motannual2020-top.jpg"
 caption: main visual (copyright etc. here
-author: Goh Uozumi, / goh-uozumi /
-translators:
-- Translated name, / slug-this-person /
-- Honnyaku Two, / slug-this-person /
+author: Goh Uozumi, /goh-uozumi/
+#translators: 'null'
 published: "true"
 ---
 

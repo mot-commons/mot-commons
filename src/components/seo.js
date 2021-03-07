@@ -34,9 +34,9 @@ const SEO = ({ description, lang, meta, title }) => {
 
   //get twitter id from the url in sitemetada
   let twitterId = site.siteMetadata?.socials.filter(function (item, index) {
-    if (item.name == "Twitter")
-      return item.url.substr(item.url.lastIndexOf("/") + 1)
-    else return ""
+    return (
+      item.name == "Twitter" && item.url.substr(item.url.lastIndexOf("/") + 1)
+    )
   })
 
   return (

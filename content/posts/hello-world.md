@@ -6,7 +6,7 @@ description: 記事の概要を書く領域．This is a custom description for S
 image: ../assets/cat.jpg
 caption: キャプションいるなら
 author: Goh Uozumi, /goh-uozumi/
-translators:
+#translators: 'null'
 published: "true"
 ---
 

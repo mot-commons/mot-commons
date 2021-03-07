@@ -1,26 +1,29 @@
 ---
 title: New Economic War - New Economic War, English
-slug: "/en/sample-new-economic-war/"
+slug: "/sample-new-economic-war/"
 date: '2021-02-01'
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 image: "../assets/motannual2020/motannual2020-top.jpg"
 caption: Insert the image of the work
 author: Goh Uozumi, /goh-uozumi/
-translators:
-dontaion: "true"
+translators: '["Honnyaku One, /honnyaku-one/", "Honnyaku Two, /honnyaku-two/"]'
+support: "Support"
 published: "true"
 ---
 
-おもち伸びる．猫食べたい
+PCだと右側に目次，スマホだとTOCをタップで表示される．言語を切り替えられる．  
+目次は内部リンクになってる
+
+おもち伸びる．猫食べたい  
 There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries. There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries.
 
 There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries.
 
-## 思考の質量
+## 思考の質量．こう見出しを入れると目次が生成される
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/E3d2mSpk1yg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-Youtubeを埋め込む
+動画はYoutubeやVimeoを埋め込む
 
 There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries. There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries.
 
@@ -30,7 +33,9 @@ There is a tide in the affairs of men. Which, taken at the flood, leads on to fo
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/E3d2mSpk1yg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-### Virtual Virtual Coins
+以下のように見出しは階層化される．大見出し内の小見出し，みたいな．以下はHTMLでいうH3タグ
+
+### Virtual Virtual Coins（これはH3タグ
 
 There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries. There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries.
 
@@ -38,29 +43,25 @@ There is a tide in the affairs of men. Which, taken at the flood, leads on to fo
 
 There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries. There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries.
 
-## Welcome To Attention Economy
+## 見出しはリンクになってるので色々つかえる．
 
-見出しを作品ごとにつくると，展示会場でも使える各作品のウェブガイドをつくることもできます．
-
-まず目次をクリックすると，ブラウザでURLに目次名が追加されます．その状態の全部のURLをコピーして，QRコードにします．するとQRを撮ったら，このページ内の各作品の見出しへ移動します．
-
-以下のようにSoundcloudを貼り付けると音声ガイドになります．Youtubeで作家が喋っている動画を貼るのでもいいです．ウェブページなので何でもできます．
-
-動画読み込みの最適化とかは後でやります．たぶｎ今貼りまくると読み込み負荷
+音声は，SoundcloudとかSpotifyを埋め込む
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/244475642&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ghostly" title="ghostly" target="_blank" style="color: #cccccc; text-decoration: none;">ghostly</a> · <a href="https://soundcloud.com/ghostly/beacon-better-or-worse-1" title="Beacon - Better Or Worse" target="_blank" style="color: #cccccc; text-decoration: none;">Beacon - Better Or Worse</a></div>
 
 <iframe src="https://open.spotify.com/embed/track/2O7heTmxheKOe1T0jNBPd1" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries.
+見出しを作品ごとにつくると，展示会場でも使える各作品のウェブガイドをつくることもできます．
+
+まず目次をクリックすると，ブラウザでURLに目次名が追加されます．その状態の全部のURLをコピーして，QRコードにします．するとQRを撮ったら，このページ内の各作品の見出しへ移動します．
+
+上記のようにSoundcloudを貼り付けると音声ガイドになります．Youtubeで作家が喋っている動画を貼るのでもいいです．ウェブページなので何でもできます．
+
+ただScriptタグは貼り付けられないです．
 
 ## AGAME
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/E3d2mSpk1yg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
 There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries.　There is a tide in the affairs of men. Which, taken at the flood, leads on to fortune; Omitted, all the voyage of their life. Is bound in shallows and in miseries.
-
-
 
 
 という感じで行ける
@@ -87,15 +88,24 @@ There is a tide in the affairs of men. Which, taken at the flood, leads on to fo
 
 ## 支援する
 
-この記事は非営利で作成されています．
+支援を募れます．  
+この記事は非営利で作成されました，だから支援してねみたいなことを入れられます．
+不要ならなしで．  
 
 ### A．翻訳する
-この記事の翻訳
+
+このサイトの特徴は，コミュニティ翻訳を受け入れられることです．Gitlocalizeを使って第三者が翻訳に参加できます．日本語を元記事として，その多言語化を不特定多数の人が行えます．  
+ここには翻訳を募る場合に，それへの簡易説明と詳細リンクを入れます．  
+これ👉 [Gitlocalize](https://gitlocalize.com/repo/5833)
 
 ### B．コーヒーを奢る
-メッセージを自由に書く．  
-<small>*注意事項などsmallタグもつかえる</small>
+
+各記事で寄付金を募れます．ここに寄付に関するメッセージを自由に書きます．  
+<small>*投げ銭を貰いやすかったり，税制の複雑さを回避するために，ウェブではよく「コーヒを奢ってもらう」という形で寄付をもらったりします</small>
 
 <!-- この下にDonorboxの埋め込みコードをいれる -->
 <iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="https://donorbox.org/embed/mot-commons-goh?default_interval=o&amount=300" style="max-width: 500px; min-width: 310px; max-height:none!important" width="100%"></iframe>
 <!-- この上まで -->
+
+寄付のサービスは，上記のように [Donorbox](https://donorbox.org) を想定しています．個人でアカウントを作れて，日本円やドルの複数通貨に対応しています．  
+このデモページでは，日本語と英語でそれぞれ別の寄付ボタンをつくっています（言語を切り替えると色が変わるのでわかると思います）．翻訳者に分配する時に，どの寄付ボタンから入金されたかを判別するためです．

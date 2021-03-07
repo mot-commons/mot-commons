@@ -440,6 +440,16 @@ a:focus {
   font-style: oblique;
   color: var(--color-text-gray);
 }
+.blog-post .post-info .support-btn {
+  line-height: 1.4rem;
+  margin-top: 0.4rem;
+}
+.blog-post .post-info .support-btn a small {
+  margin-right: 0.4rem;
+}
+.blog-post .post-info .support-btn .gatsby-image-wrapper {
+  vertical-align: bottom;
+}
 .blog-post .post-info .translators {
   text-align: right;
   max-width: 40%;

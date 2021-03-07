@@ -6,7 +6,7 @@ role: Translator
 date: "2015-05-28"
 avatar: "../assets/avatars/goh-uozumi.jpg"
 caption: caption here
-translators: 
+#translators: 'null'
 published: "true"
 ---
 にほんご

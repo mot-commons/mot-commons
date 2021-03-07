@@ -1,18 +1,13 @@
 ---
 type: People
 name: Goh Uozumi
-slug: "/en/goh-uozumi/"
+slug: "/goh-uozumi/"
 role: Artist
 date: '2015-05-28'
 avatar: "../assets/avatars/goh-uozumi.jpg"
 caption: caption here
-socials:
-- Website, https://goh.works
-- Twitter, https://twitter.com/ghuzmi
-- Instagram, https://www.instagram.com/goh_u/
-translators:
-- Translated name
-- Honnyaku Two
+links: '["Website, https://goh.works", "Twitter, https://twitter.com/ghuzmi", "Instagram, https://www.instagram.com/goh_u/"]'
+translators: 'null'
 published: "true"
 ---
 Goh Uozumi is an artist working in the field of art and technology. He studied Media Art under Seiko Mikami, and has published works that consider "trends in automation in civilization" such as autonomous decentralized organizations, programmable money, machine learning, surveillance society, and creative coding. 
