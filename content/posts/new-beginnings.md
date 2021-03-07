@@ -6,7 +6,7 @@ description: 記事の概要を書く領域．This is a custom description for S
 image: ../assets/motannual2020/motannual2020-top.jpg
 caption: main visual (copyright etc. here
 author: Goh Uozumi, /goh-uozumi/
-#translators: 'null'
+translators: 'null'
 published: "true"
 ---
 
