@@ -151,7 +151,7 @@ const BlogPostTemplate = ({ data, location }) => {
         </header>
 
         {/* {coverImage} */}
-        <figure className="gatsby-resp-image-figure">
+        {/* <figure className="gatsby-resp-image-figure">
           <GatsbyImage
             image={coverImage}
             alt={"cover image of " + post.frontmatter.title}
@@ -159,7 +159,7 @@ const BlogPostTemplate = ({ data, location }) => {
           <figcaption className="gatsby-resp-image-figcaption">
             {coverCaption}
           </figcaption>
-        </figure>
+        </figure> */}
 
         <section
           dangerouslySetInnerHTML={{ __html: post.html }}
