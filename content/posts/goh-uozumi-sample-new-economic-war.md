@@ -3,7 +3,7 @@ title: New Economic War - New Economic War,　日本語文章あああ
 slug: /sample-new-economic-war/
 date: "2021-02-01"
 description: 記事の概要を書く領域．This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
-image: ../assets/motannual2020/motannual2020-top.jpg
+image: ../assets/invisible-powers/motannual2020-top.jpg
 caption: ここにキャプションを画像をいれられる
 author: Goh Uozumi, /goh-uozumi/
 translators: 'null'
@@ -71,7 +71,7 @@ There is a tide in the affairs of men. Which, taken at the flood, leads on to fo
 ## 展覧会の図録
 
 <a class="card" href="http://www.nadiff-online.com/?pid=156665274" target="_blank" rel="noopener noreferrer">
-  <img src="../assets/motannual2020/motannual2020-catalog.jpg" alt="The catalog of MOT Annual 2020 - Invisible Powers" style="width:100%">
+  <img src="../assets/invisible-powers/motannual2020-catalog.jpg" alt="The catalog of MOT Annual 2020 - Invisible Powers" style="width:100%">
   <div class="container">
     <h4>書籍 ― MOTアニュアル2020「透明な力たち INVISIBLE POWERS」</h4> 
     <p>日本語と英語で書かれた展覧会の図録は Nadiff-onlineショップ からご購入いただけます．</p>

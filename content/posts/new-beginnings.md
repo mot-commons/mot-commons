@@ -3,7 +3,7 @@ title: はじめての人へ
 slug: /new-beginnings/
 date: "2015-05-28T22:40:32.169Z"
 description: 記事の概要を書く領域．This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
-image: ../assets/motannual2020/motannual2020-top.jpg
+image: ../assets/invisible-powers/motannual2020-top.jpg
 caption: main visual (copyright etc. here
 author: Goh Uozumi, /goh-uozumi/
 translators: 'null'
@@ -39,7 +39,7 @@ way. On her way she met a copy.
 
 ### 動画を埋め込む（Youtubeなど👇
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/E3d2mSpk1yg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe height="315" src="https://www.youtube.com/embed/E3d2mSpk1yg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="expansion-width"></iframe>
 
 Youtubeを埋め込む
 

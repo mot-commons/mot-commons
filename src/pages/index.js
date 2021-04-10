@@ -48,6 +48,9 @@ const BlogIndex = ({ data, location }) => {
         </ul>
       </DrawerMenu>
       <Bio />
+
+      
+      
       <ol style={{ listStyle: `none` }} className="post-list">
         {posts.map(post => {
           const author = post.frontmatter.author?.split(",")
