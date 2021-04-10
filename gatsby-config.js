@@ -3,13 +3,13 @@ module.exports = {
     title: `MOT Commons`,
     author: {
       name: `MOT Commons -α`,
-      summary: `Unofficial digital commons and archives by the official creators who participated in MOT's exhibitions. α-version.`,
+      summary: `Unofficial digital commons and archives by the creators participated in MOT's exhibitions. α-version.`,
     },
     description: `Unofficial website of MOT as digital commons and archives. デジタルコモンズ＆アーカイブとしてのMOT非公式ウェブサイト．`,
     siteUrl: `https://mot-commons.github.io`,
     socials: [
       {
-        name: `Website`,
+        name: `MOT Website`,
         url: `https://www.mot-art-museum.jp/`,
       },
       // {
@@ -71,7 +71,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-images`,
             options: {
-              maxWidth: 1024,
+              maxWidth: 1280,
             },
           },
           {
