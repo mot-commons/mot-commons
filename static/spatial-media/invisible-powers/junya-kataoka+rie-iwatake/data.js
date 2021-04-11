@@ -53,7 +53,7 @@ var APP_DATA = {
           "yaw": 0.0834870980685043,
           "pitch": 0.27509130627262124,
           "title": "展覧会解説シート",
-          "text": "ああああ<br><br><a href=\"https://github.com/mot-commons/mot-commons/tree/main/content/assets/invisible-powers/MOT_Annual_floor_map%2B.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">MOT_Annual_floor_map%2B.pdf</a>"
+          "text": "ああああ<br><br><a href=\"https://github.com/mot-commons/mot-commons/blob/main/content/assets/invisible-powers/MOT_Annual_floor_map%2B.pdf\" target=\"_blank\" rel=\"noopener noreferrer\">MOT_Annual_floor_map%2B.pdf</a>"
         },
         {
           "yaw": -1.6783332924207617,
