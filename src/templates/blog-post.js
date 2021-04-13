@@ -52,7 +52,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
-        image={coverImage.images.fallback.src}
+        image={coverImage?.images?.fallback?.src}
       />
 
       <DrawerMenu>
