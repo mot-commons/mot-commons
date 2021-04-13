@@ -4,7 +4,6 @@ slug: /hello-world/
 date: "2021-01-01T22:12:03.284Z"
 description: 記事の概要を書く領域．This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 image: ../assets/cat.jpg
-caption: キャプションいるなら
 author: Goh Uozumi, /goh-uozumi/
 #translators: 'null'
 published: "true"

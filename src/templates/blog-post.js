@@ -39,8 +39,9 @@ const BlogPostTemplate = ({ data, location }) => {
   bioSlugs = bioSlugs.replace(reg, "")
   // console.log("bioSlugs ", bioSlugs)
 
-  const coverCaption = post.frontmatter.caption && post.frontmatter.caption
+  // const coverCaption = post.frontmatter.caption && post.frontmatter.caption
   const coverImage = getImage(post.frontmatter.image)
+  // console.log("coverImage", coverImage.images.fallback.src)
 
   const tableOfContents = post.tableOfContents && (
     <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
@@ -51,6 +52,7 @@ const BlogPostTemplate = ({ data, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        image={coverImage.images.fallback.src}
       />
 
       <DrawerMenu>
@@ -234,7 +236,6 @@ export const pageQuery = graphql`
             # }
           }
         }
-        caption
         author
         translators
         support

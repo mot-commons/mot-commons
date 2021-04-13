@@ -4,7 +4,6 @@ slug: "/sample-new-economic-war/"
 date: '2021-02-01'
 description: This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 image: "../assets/motannual2020/motannual2020-top.jpg"
-caption: Insert the image of the work
 author: Goh Uozumi, /goh-uozumi/
 translators: '["Honnyaku One, /honnyaku-one/", "Honnyaku Two, /honnyaku-two/"]'
 support: Support

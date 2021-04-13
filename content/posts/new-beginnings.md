@@ -4,7 +4,6 @@ slug: /new-beginnings/
 date: "2015-05-28T22:40:32.169Z"
 description: 記事の概要を書く領域．This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 image: ../assets/invisible-powers/motannual2020-top.jpg
-caption: main visual (copyright etc. here
 author: Goh Uozumi, /goh-uozumi/
 translators: 'null'
 published: "true"

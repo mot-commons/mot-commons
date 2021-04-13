@@ -10,17 +10,20 @@ import DrawerMenu from "../components/menu"
 
 // import Image from "gatsby-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import siteImage from "../../content/assets/invisible-powers/motannual2020-top.jpg"
 
 const BlogIndex = ({ data, location }) => {
   const { locale, config, defaultLang } = useLocalization()
   const siteTitle = data.site.siteMetadata?.title || `Title`
+  // const siteImage = getImage(")
   const posts = data.allMarkdownRemark.nodes
+  // console.log("siteImage", siteImage)
   // console.log("location", location)
 
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title={siteTitle} />
+        <SEO title={siteTitle} image={siteImage} />
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/posts" (or the
@@ -33,7 +36,7 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title={siteTitle} />
+      <SEO title={siteTitle} image={siteImage} />
       <DrawerMenu>
         <ul className="lang-switcher">
           {config.map(item => {

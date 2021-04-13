@@ -5,7 +5,7 @@ module.exports = {
       name: `MOT Commons -α`,
       summary: `Unofficial digital commons and archives by the creators participated in MOT's exhibitions. α-version.`,
     },
-    description: `Unofficial website of MOT as digital commons and archives. デジタルコモンズ＆アーカイブとしてのMOT非公式ウェブサイト．`,
+    description: `Unofficial digital commons and archives by the creators participated in MOT's exhibitions. α-version. デジタルコモンズ＆アーカイブとしてのMOT非公式ウェブサイト．`,
     siteUrl: `https://mot-commons.github.io`,
     socials: [
       {

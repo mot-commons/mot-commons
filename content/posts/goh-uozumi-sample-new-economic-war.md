@@ -4,7 +4,6 @@ slug: /sample-new-economic-war/
 date: "2021-02-01"
 description: 記事の概要を書く領域．This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 image: ../assets/invisible-powers/motannual2020-top.jpg
-caption: ここにキャプションを画像をいれられる
 author: Goh Uozumi, /goh-uozumi/
 translators: 'null'
 support: "支援する"
