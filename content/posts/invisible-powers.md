@@ -19,12 +19,17 @@ published: "true"
 いまは試験的に作家別のコンテンツを別々に下記に入れています（複数埋め込んでるからスマホだと重いかも）  
 また各作家ページに下記のように自分の分だけ埋め込むこともできます．
 
-<iframe src="/spatial-media/invisible-powers/junya-kataoka+rie-iwatake/index.html" title="dummy"  width="100%" height="500px" class="expansion-width"></iframe>
+<!-- <iframe src="/spatial-media/invisible-powers/junya-kataoka+rie-iwatake/index.html" title="dummy"  width="100%" height="500px" class="expansion-width"></iframe>
 
 <iframe src="/spatial-media/invisible-powers/goh-uozumi/index.html" title="dummy"  width="100%" height="500px" class="expansion-width"></iframe>
 
-<iframe src="/spatial-media/invisible-powers/gaetan-kubo/index.html" title="dummy"  width="100%" height="500px" class="expansion-width"></iframe>
+<iframe src="/spatial-media/invisible-powers/gaetan-kubo/index.html" title="dummy"  width="100%" height="500px" class="expansion-width"></iframe> -->
 
+<iframe src="https://file.goh.works/spatial-media/invisible-powers/junya-kataoka+rie-iwatake/index.html" title="dummy"  width="100%" height="500px" class="expansion-width"></iframe>
+
+<iframe src="https://file.goh.works/spatial-media/invisible-powers/goh-uozumi/index.html" title="dummy" width="100%" height="500px" class="expansion-width"></iframe>
+
+<iframe src="https://file.goh.works/spatial-media/invisible-powers/gaetan-kubo/index.html" title="dummy"  width="100%" height="500px" class="expansion-width"></iframe>
 
 
 
