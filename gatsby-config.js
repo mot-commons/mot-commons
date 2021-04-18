@@ -160,6 +160,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      // options: {
+      //   siteUrl: `https://mot-commons.org`,
+      // },
+    },
     `gatsby-plugin-gatsby-cloud`,
     {
       resolve: `gatsby-theme-i18n`,

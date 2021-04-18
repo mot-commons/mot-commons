@@ -53,6 +53,7 @@ const BlogPostTemplate = ({ data, location }) => {
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
         image={coverImage?.images?.fallback?.src}
+        canonical={post.frontmatter.canonical}
       />
 
       <DrawerMenu>
@@ -239,6 +240,7 @@ export const pageQuery = graphql`
         author
         translators
         support
+        canonical
       }
       tableOfContents
       fields {
