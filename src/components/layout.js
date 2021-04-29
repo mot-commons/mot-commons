@@ -1,7 +1,25 @@
-// import * as React from "react"
-import React from "react"
+import * as React from "react"
 import { Link } from "gatsby"
 import { LocalizedLink, useLocalization } from "gatsby-theme-i18n"
+import { MDXProvider } from "@mdx-js/react"
+import {
+  Donorbox,
+  Kofi,
+  Button,
+  Image,
+  ImageLink,
+  Card,
+  ProductCard,
+} from "./custom-blocks"
+const shortcodes = {
+  Donorbox,
+  Kofi,
+  Button,
+  Image,
+  ImageLink,
+  Card,
+  ProductCard,
+}
 
 const Layout = ({ location, title, children }) => {
   const { locale, config, defaultLang } = useLocalization()
@@ -33,7 +51,8 @@ const Layout = ({ location, title, children }) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
 
-      <main>{children}</main>
+      <MDXProvider components={shortcodes}>{children}</MDXProvider>
+      {/* <main>{children}</main> */}
       <footer className="copyright">
         © {new Date().getFullYear()}, by
         {` `}
