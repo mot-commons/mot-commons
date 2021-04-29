@@ -1,7 +1,7 @@
-// import * as React from "react"
-import React from "react"
+import * as React from "react"
 import { Link, graphql } from "gatsby"
 import { LocalizedLink, useLocalization } from "gatsby-theme-i18n"
+// import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -15,10 +15,7 @@ import siteImage from "../../content/assets/invisible-powers/motannual2020-top.j
 const BlogIndex = ({ data, location }) => {
   const { locale, config, defaultLang } = useLocalization()
   const siteTitle = data.site.siteMetadata?.title || `Title`
-  // const siteImage = getImage(")
-  const posts = data.allMarkdownRemark.nodes
-  // console.log("siteImage", siteImage)
-  // console.log("location", location)
+  const posts = data.allMdx.nodes
 
   if (posts.length === 0) {
     return (
@@ -26,7 +23,7 @@ const BlogIndex = ({ data, location }) => {
         <SEO title={siteTitle} image={siteImage} />
         <Bio />
         <p>
-          No blog posts found. Add markdown posts to "content/posts" (or the
+          No blog posts found. Add markdown posts to "content/blog" (or the
           directory you specified for the "gatsby-source-filesystem" plugin in
           gatsby-config.js).
         </p>
@@ -52,8 +49,6 @@ const BlogIndex = ({ data, location }) => {
       </DrawerMenu>
       <Bio />
 
-      
-      
       <ol style={{ listStyle: `none` }} className="post-list">
         {posts.map(post => {
           const author = post.frontmatter.author?.split(",")
@@ -72,26 +67,31 @@ const BlogIndex = ({ data, location }) => {
                     image={featuredImage}
                     alt={"cover image of " + title}
                     className="cover-image"
+                    // objectFit="scale-down"
                   />
-
-                  <header>
-                    {author && <h3>{author[0] || ""}</h3>}
-                    <h2>
-                      <span itemProp="headline">{title}</span>
-                    </h2>
-                    <small>
-                      {post.frontmatter.date || ""} • {post.timeToRead || ""}{" "}
-                      min read
-                    </small>
-                  </header>
-                  <section>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: post.frontmatter.description || post.excerpt,
-                      }}
-                      itemProp="description"
-                    />
-                  </section>
+                  <div className="details">
+                    <header>
+                      {author && <h3>{author[0] || ""}</h3>}
+                      <h2>
+                        <span itemProp="headline">{title}</span>
+                      </h2>
+                      <small>
+                        {post.frontmatter.date || ""} • {post.timeToRead || ""}{" "}
+                        min read
+                      </small>
+                    </header>
+                    <section>
+                      {/* <MDXRenderer>
+                      {post.frontmatter.description || post.excerpt}
+                    </MDXRenderer> */}
+                      <p
+                        dangerouslySetInnerHTML={{
+                          __html: post.frontmatter.description || post.excerpt,
+                        }}
+                        itemProp="description"
+                      />
+                    </section>
+                  </div>
                 </Link>
               </article>
             </li>
@@ -111,10 +111,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(
+    allMdx(
       filter: {
         frontmatter: { published: { eq: "true" }, type: { ne: "People" } }
-        fields: { locale: { eq: $locale } }
+        fields: { lang: { eq: $locale } }
       }
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
@@ -135,12 +135,6 @@ export const pageQuery = graphql`
                 layout: CONSTRAINED
                 formats: [AUTO, WEBP, AVIF]
               )
-              # fixed(width: 50, height: 50) {
-              #   ...GatsbyImageSharpFixed
-              # }
-              # fluid(maxWidth: 1000, quality: 90) {
-              #   ...GatsbyImageSharpFluid_withWebp_tracedSVG
-              # }
             }
           }
           author

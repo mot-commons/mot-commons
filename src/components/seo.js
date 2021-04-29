@@ -31,7 +31,7 @@ const SEO = ({ description, lang, meta, title, image, canonical }) => {
 
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
-  const imageUrl = image || "";
+  const imageUrl = image || ""
 
   //get twitter id from the url in sitemetada
   let twitterId = site.siteMetadata?.socials.filter(function (item, index) {
@@ -48,9 +48,7 @@ const SEO = ({ description, lang, meta, title, image, canonical }) => {
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
       link={
-        canonical
-          ? [{ rel: 'canonical', key: canonical, href: canonical }]
-          : []
+        canonical ? [{ rel: "canonical", key: canonical, href: canonical }] : []
       }
       meta={[
         {
@@ -71,17 +69,17 @@ const SEO = ({ description, lang, meta, title, image, canonical }) => {
         },
         {
           property: `og:image`,
-          content:  "https://mot-commons" + imageUrl,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary_large_image`,
+          content: "https://mot-commons" + imageUrl,
         },
         // {
         //   name: `twitter:creator`,
         //   content: twitterId,
         //   // content: site.siteMetadata?.social?.twitter || ``,
         // },
+        {
+          name: `twitter:card`,
+          content: `summary_large_image`,
+        },
         {
           name: `twitter:title`,
           content: title,
@@ -90,16 +88,20 @@ const SEO = ({ description, lang, meta, title, image, canonical }) => {
           name: `twitter:description`,
           content: metaDescription,
         },
+        {
+          name: `twitter:twitter:image`,
+          content: "https://mot-commons" + imageUrl,
+        },
       ].concat(meta)}
     />
   )
 }
 
 SEO.defaultProps = {
-  lang: `en`,
+  lang: `ja`,
   meta: [],
   description: ``,
-  image:``
+  image: ``,
 }
 
 SEO.propTypes = {

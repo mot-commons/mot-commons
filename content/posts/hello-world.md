@@ -6,7 +6,7 @@ description: 記事の概要を書く領域．This is a custom description for S
 image: ../assets/cat.jpg
 author: Goh Uozumi, /goh-uozumi/
 #translators: 'null'
-published: "true"
+published: "false"
 ---
 
 This is my first post on my new fake blog! How exciting!
