@@ -2,6 +2,7 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { LocalizedLink, useLocalization } from "gatsby-theme-i18n"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 import Bio from "../components/bio"
 import Layout from "../components/layout"
@@ -9,11 +10,13 @@ import SEO from "../components/seo"
 // import Image from "gatsby-image"
 import { GatsbyImage, getImage, StaticImage } from "gatsby-plugin-image"
 import DrawerMenu from "../components/menu"
+import Toc from "../components/toc"
+import ShareBtns from "../components/shareBtns"
 
 const BlogPostTemplate = ({ data, location }) => {
   const { locale, config, defaultLang } = useLocalization()
 
-  const post = data.markdownRemark
+  const post = data.mdx
   const siteTitle = data.site.siteMetadata?.title || `Title`
   const { previous, next } = data
 
@@ -39,11 +42,16 @@ const BlogPostTemplate = ({ data, location }) => {
   bioSlugs = bioSlugs.replace(reg, "")
   // console.log("bioSlugs ", bioSlugs)
 
-  const coverCaption = post.frontmatter.caption && post.frontmatter.caption
+  // const coverCaption = post.frontmatter.caption && post.frontmatter.caption
   const coverImage = getImage(post.frontmatter.image)
+  // console.log("coverImage", coverImage.images.fallback.src)
 
   const tableOfContents = post.tableOfContents && (
-    <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
+    <Toc
+      title={post.frontmatter.title}
+      tableOfContents={post.tableOfContents.items}
+    />
+    // <div dangerouslySetInnerHTML={{ __html: post.tableOfContents }} />
   )
 
   return (
@@ -51,6 +59,8 @@ const BlogPostTemplate = ({ data, location }) => {
       <SEO
         title={post.frontmatter.title}
         description={post.frontmatter.description || post.excerpt}
+        image={coverImage?.images?.fallback?.src}
+        canonical={post.frontmatter.canonical}
       />
 
       <DrawerMenu>
@@ -64,16 +74,14 @@ const BlogPostTemplate = ({ data, location }) => {
               </li>
             )
           })}
+          <li>
+            <LocalizedLink className="header-link-home" to="/">
+              <em>↩️ top page</em>
+            </LocalizedLink>
+          </li>
         </ul>
         <hr />
-        <div className="toc">
-          <p className="toc-title">
-            <span className="small">Table of contents</span>
-            <br />
-            <a href="#">{post.frontmatter.title}</a>
-          </p>
-          {tableOfContents}
-        </div>
+        {tableOfContents}
       </DrawerMenu>
 
       <article
@@ -145,9 +153,16 @@ const BlogPostTemplate = ({ data, location }) => {
               className="drawer-hidden"
             />
             <label htmlFor="drawer-check" className="drawer-open-mobile">
-              <small>Show TOC & Lang</small>
+              <small>Table of contents & Lang</small>
             </label>
           </div>
+
+          {typeof window !== "undefined" && window.location.href && (
+            <ShareBtns
+              articleUrl={window.location.href}
+              articleTitle={post.frontmatter.title}
+            />
+          )}
         </header>
 
         {/* {coverImage} */}
@@ -161,15 +176,16 @@ const BlogPostTemplate = ({ data, location }) => {
           </figcaption>
         </figure> */}
 
-        <section
+        <MDXRenderer>{post.body}</MDXRenderer>
+        {/* <section
           dangerouslySetInnerHTML={{ __html: post.html }}
           itemProp="articleBody"
-        />
+        /> */}
       </article>
 
       <footer id="post-bio">
         <hr />
-        <Bio slugs={bioSlugs} locale={locale} />
+        <Bio slugs={bioSlugs} lang={locale} />
       </footer>
 
       <nav className="blog-post-nav">
@@ -215,10 +231,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    markdownRemark(id: { eq: $id }) {
+    mdx(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)
-      html
+      body
       frontmatter {
         title
         date(formatString: "MMM DD, YYYY")
@@ -234,10 +250,10 @@ export const pageQuery = graphql`
             # }
           }
         }
-        caption
         author
         translators
         support
+        canonical
       }
       tableOfContents
       fields {
@@ -245,7 +261,7 @@ export const pageQuery = graphql`
       }
       timeToRead
     }
-    previous: markdownRemark(id: { eq: $previousPostId }) {
+    previous: mdx(id: { eq: $previousPostId }) {
       fields {
         slug
       }
@@ -253,7 +269,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    next: markdownRemark(id: { eq: $nextPostId }) {
+    next: mdx(id: { eq: $nextPostId }) {
       fields {
         slug
       }

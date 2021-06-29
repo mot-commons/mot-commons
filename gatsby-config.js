@@ -1,11 +1,21 @@
 module.exports = {
   siteMetadata: {
+    // title: `Gatsby Starter Blog`,
+    // author: {
+    //   name: `Kyle Mathews`,
+    //   summary: `who lives and works in San Francisco building useful things.`,
+    // },
+    // description: `A starter blog demonstrating what Gatsby can do.`,
+    // siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    // social: {
+    //   twitter: `kylemathews`,
+    // },
     title: `MOT Commons`,
     author: {
       name: `MOT Commons -α`,
       summary: `Unofficial digital commons and archives by the creators participated in MOT's exhibitions. α-version.`,
     },
-    description: `Unofficial website of MOT as digital commons and archives. デジタルコモンズ＆アーカイブとしてのMOT非公式ウェブサイト．`,
+    description: `Unofficial digital commons and archives by the creators participated in MOT's exhibitions. α-version. デジタルコモンズ＆アーカイブとしてのMOT非公式ウェブサイト．`,
     siteUrl: `https://mot-commons.github.io`,
     socials: [
       {
@@ -13,8 +23,8 @@ module.exports = {
         url: `https://www.mot-art-museum.jp/`,
       },
       // {
-      //   name: `Twitter`,
-      //   url: `https://twitter.com/MOT_art_museum`,
+      //   name: `Source`,
+      //   url: `https://github.com/mot-commons/mot-commons`,
       // },
     ],
   },
@@ -58,20 +68,29 @@ module.exports = {
     // {
     //   resolve: `gatsby-source-filesystem`,
     //   options: {
+    //     path: `${__dirname}/content/blog`,
+    //     name: `blog`,
+    //   },
+    // },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
     //     name: `images`,
     //     path: `${__dirname}/src/images`,
     //   },
     // },
     {
-      resolve: `gatsby-transformer-remark`,
+      resolve: `gatsby-plugin-mdx`,
       options: {
-        plugins: [
+        extensions: [`.md`, `.mdx`],
+        gatsbyRemarkPlugins: [
           `gatsby-remark-relative-images`,
 
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1280,
+              showCaptions: true,
             },
           },
           {
@@ -80,10 +99,10 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          `gatsby-remark-autolink-headers`,
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
-          `gatsby-remark-autolink-headers`,
         ],
       },
     },
@@ -96,7 +115,7 @@ module.exports = {
     //   },
     // },
     {
-      resolve: `gatsby-plugin-feed`,
+      resolve: `gatsby-plugin-feed-mdx`,
       options: {
         query: `
           {
@@ -112,37 +131,42 @@ module.exports = {
         `,
         feeds: [
           {
-            serialize: ({ query: { site, allMarkdownRemark } }) => {
-              return allMarkdownRemark.nodes.map(node => {
-                return Object.assign({}, node.frontmatter, {
-                  description: node.excerpt,
-                  date: node.frontmatter.date,
-                  url: site.siteMetadata.siteUrl + node.fields.slug,
-                  guid: site.siteMetadata.siteUrl + node.fields.slug,
-                  custom_elements: [{ "content:encoded": node.html }],
+            serialize: ({ query: { site, allMdx } }) => {
+              return allMdx.edges.map(edge => {
+                return Object.assign({}, edge.node.frontmatter, {
+                  description: edge.node.excerpt,
+                  date: edge.node.frontmatter.date,
+                  url: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + edge.node.fields.slug,
+                  custom_elements: [{ "content:encoded": edge.node.html }],
                 })
               })
             },
             query: `
               {
-                allMarkdownRemark(
+                allMdx(
+                  filter: {
+                    frontmatter: { published: { eq: "true" }, type: { ne: "People" } }
+                  }
                   sort: { order: DESC, fields: [frontmatter___date] },
                 ) {
-                  nodes {
-                    excerpt
-                    html
-                    fields {
-                      slug
-                    }
-                    frontmatter {
-                      title
-                      date
+                  edges {
+                    node {
+                      excerpt
+                      html
+                      fields { slug }
+                      frontmatter {
+                        title
+                        date
+                      }
                     }
                   }
                 }
               }
             `,
             output: "/rss.xml",
+            title: "MOT Commons's RSS Feed",
+            match: "^/posts/",
           },
         ],
       },
@@ -160,6 +184,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-react-helmet-canonical-urls`,
+      // options: {
+      //   siteUrl: `https://mot-commons.org`,
+      // },
+    },
     `gatsby-plugin-gatsby-cloud`,
     {
       resolve: `gatsby-theme-i18n`,

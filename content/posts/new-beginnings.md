@@ -4,10 +4,9 @@ slug: /new-beginnings/
 date: "2015-05-28T22:40:32.169Z"
 description: 記事の概要を書く領域．This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 image: ../assets/invisible-powers/motannual2020-top.jpg
-caption: main visual (copyright etc. here
 author: Goh Uozumi, /goh-uozumi/
-translators: 'null'
-published: "true"
+translators: "null"
+published: "false"
 ---
 
 これは日本語版．Far far away, behind the word mountains, far from the countries Vokalia and
@@ -35,13 +34,13 @@ way. On her way she met a copy.
 
 ![Main Visual](../assets/motannual2020/motannual2020-top.jpg "Caption here")
 
-画像を埋め込む👆
+画像を埋め込む 👆
 
-### 動画を埋め込む（Youtubeなど👇
+### 動画を埋め込む（Youtube など 👇
 
-<iframe height="315" src="https://www.youtube.com/embed/E3d2mSpk1yg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="expansion-width"></iframe>
+<iframe height="315" src="https://www.youtube.com/embed/E3d2mSpk1yg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen className="expansion-width"></iframe>
 
-Youtubeを埋め込む
+Youtube を埋め込む
 
 But nothing the copy said could convince her and so it didn’t take long until a
 few insidious Copy Writers ambushed her, made her drunk with
@@ -89,11 +88,11 @@ again and again. And if she hasn’t been rewritten, then they are still using
 her. Far far away, behind the word mountains, far from the countries Vokalia and
 Consonantia, there live the blind texts.
 
-### 音声を埋め込む👇
+### 音声を埋め込む 👇
 
 <iframe src="https://open.spotify.com/embed/track/2O7heTmxheKOe1T0jNBPd1" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
 
-Spotifyを埋め込む
+Spotify を埋め込む
 
 Separated they live in Bookmarksgrove right at the coast of the Semantics, a
 large language ocean. A small river named Duden flows by their place and
@@ -102,7 +101,7 @@ which roasted parts of sentences fly into your mouth.
 
 <iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/244475642&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/ghostly" title="ghostly" target="_blank" style="color: #cccccc; text-decoration: none;">ghostly</a> · <a href="https://soundcloud.com/ghostly/beacon-better-or-worse-1" title="Beacon - Better Or Worse" target="_blank" style="color: #cccccc; text-decoration: none;">Beacon - Better Or Worse</a></div>
 
-Soundcloudを埋め込む
+Soundcloud を埋め込む
 
 Even the all-powerful Pointing has no control about the blind texts it is an
 almost unorthographic life One day however a small line of blind text by the

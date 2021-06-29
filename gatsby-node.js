@@ -11,7 +11,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(
     `
       {
-        allMarkdownRemark(
+        allMdx(
           filter: { frontmatter: { published: { eq: "true" } } }
           sort: { fields: [frontmatter___date], order: ASC }
           limit: 1000
@@ -37,7 +37,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
 
   //allPosts has all post-types. post, post-en, persons...
-  const allPosts = result.data.allMarkdownRemark.nodes
+  const allPosts = result.data.allMdx.nodes
 
   //Get folder name form absolute-path, ".../content/posts/file.md" to "posts"
   const getPostType = fileAbsolutePath => {
@@ -110,22 +110,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode })
     //get folder-name inc md-files, and get locale such as ja or en
     const fileNode = getNode(node.parent)
-    let tmp = fileNode.sourceInstanceName.split("-")
+    const tmp = fileNode.sourceInstanceName.split("-")
     const locale = tmp[1] ? tmp[1] : "ja"
+
     // set slug with locale, ["ja" is /name-of-file/] and ["en" is /en/name-of-file/]
     createNodeField({
-      name: `slug`,
       node,
+      name: `slug`,
       value: locale == "ja" ? value : "/" + locale + value,
     })
 
     createNodeField({
       node,
-      name: `locale`,
+      name: `lang`,
       value: locale,
     })
   }
@@ -157,7 +158,7 @@ exports.createSchemaCustomization = ({ actions }) => {
       url: String
     }
 
-    type MarkdownRemark implements Node {
+    type Mdx implements Node {
       frontmatter: Frontmatter
       fields: Fields
     }

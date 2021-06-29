@@ -5,22 +5,18 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-// import * as React from "react"
 import React, { useMemo } from "react"
+// import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
-// import Image from "gatsby-image"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+// import { StaticImage } from "gatsby-plugin-image"
 
-const Bio = ({ slugs, locale }) => {
-  //get all md-files of people. can't use filter with dynamic regex because StaticQuery doesn't allow dynamic variables.
+const Bio = ({ slugs, lang }) => {
   const data = useStaticQuery(graphql`
     query BioQuery {
       siteAvatar: file(absolutePath: { regex: "/avatars/logo.jpg/" }) {
         childImageSharp {
           gatsbyImageData(width: 50, height: 50, layout: FIXED)
-          # fixed(width: 50, height: 50, quality: 95) {
-          #   ...GatsbyImageSharpFixed
-          # }
         }
       }
       site {
@@ -35,19 +31,18 @@ const Bio = ({ slugs, locale }) => {
           }
         }
       }
-      allMarkdownRemark(
+      allMdx(
         filter: {
           frontmatter: { published: { eq: "true" }, type: { eq: "People" } }
-          # fields: { slug: { regex: $slugs } }
         }
       ) {
         nodes {
           excerpt
           fields {
             slug
-            locale
+            lang
           }
-          html
+          body
           frontmatter {
             name
             role
@@ -59,9 +54,6 @@ const Bio = ({ slugs, locale }) => {
                   layout: FIXED
                   formats: [AUTO, WEBP, AVIF]
                 )
-                # fixed(width: 50, height: 50) {
-                #   ...GatsbyImageSharpFixed
-                # }
               }
             }
             links
@@ -79,8 +71,8 @@ const Bio = ({ slugs, locale }) => {
   //get selected data with regex slugs, "/name-one/|/name-two/"
   const posts = useMemo(() => {
     if (slugs) {
-      const array = data.allMarkdownRemark.nodes.filter(value => {
-        return value.fields.slug.match(slugs) && value.fields.locale === locale
+      const array = data.allMdx.nodes.filter(value => {
+        return value.fields.slug.match(slugs) && value.fields.lang === lang
       })
       //sort translator and staff to the end of the array
       const supportors = ["translator", "staff"]
@@ -205,6 +197,34 @@ const Bio = ({ slugs, locale }) => {
       </div>
     </aside>
   )
+
+  // Set these values by editing "siteMetadata" in gatsby-config.js
+  // const author = data.site.siteMetadata?.author
+  // const social = data.site.siteMetadata?.social
+
+  // return (
+  //   <div className="bio">
+  //     <StaticImage
+  //       className="bio-avatar"
+  //       layout="fixed"
+  //       formats={["AUTO", "WEBP", "AVIF"]}
+  //       src="../images/profile-pic.png"
+  //       width={50}
+  //       height={50}
+  //       quality={95}
+  //       alt="Profile picture"
+  //     />
+  //     {author?.name && (
+  //       <p>
+  //         Written by <strong>{author.name}</strong> {author?.summary || null}
+  //         {` `}
+  //         <a href={`https://twitter.com/${social?.twitter || ``}`}>
+  //           You should follow them on Twitter
+  //         </a>
+  //       </p>
+  //     )}
+  //   </div>
+  // )
 }
 
 export default Bio
