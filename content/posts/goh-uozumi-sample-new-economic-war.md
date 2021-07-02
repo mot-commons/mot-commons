@@ -1,7 +1,7 @@
 ---
 title: サンプル記事 - New Economic War,　日本語文章あああ
 slug: /sample-new-economic-war/
-date: "2021-02-01"
+date: "2020-02-01"
 description: 記事の概要を書く領域．This is a custom description for SEO and Open Graph purposes, rather than the default generated excerpt. Simply add a description field to the frontmatter.
 image: ../assets/invisible-powers/motannual2020-top.jpg
 author: Goh Uozumi, /goh-uozumi/
