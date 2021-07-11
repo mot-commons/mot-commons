@@ -13,7 +13,7 @@ canonical: "https://www.mot-art-museum.jp/exhibitions/mot-annual-2020/"
 
 ## 360° Virtual Tour
 
-<iframe src="/spatial-media/invisible-powers/exhibition/index.html" title="Virtual Tour" width="100%" height="400px" className="expansion-width spatial" style="margin-bottom:0px"></iframe>
+<iframe src="/spatial-media/invisible-powers/exhibition/index.html" title="Virtual Tour" width="100%" height="400px" className="width-large spatial" style="margin-bottom:0px"></iframe>
 
 <p className="caption-center">©制作：MOT Commons, 撮影：木奥惠三</p>
 
@@ -36,7 +36,7 @@ full />
 
 ## 記録映像
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/WjFxvm7ulCc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-bottom:0px"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WjFxvm7ulCc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-bottom:0px" class="width-large video"></iframe>
 
 <p className="caption-center">©2020 東京都現代美術館 / 撮影・編集：髙橋健治 </p>
 
@@ -85,7 +85,7 @@ self />
 
 <Card 
 url="https://yokoshimizu.com/" 
-filename="cat.jpg" 
+filename="goh-uozumi.jpg" 
 label="Portfolio - outside link" 
 title="Yoko Shimizu - Official Website" 
 excerpt="記事がない人はウェブサイトのリンクを貼ります" 
@@ -101,7 +101,7 @@ author="中島佑太"
 self />
 
 <Card 
-url="/goh-uozumi-sample-new-economic-war" 
+url="/goh-new-economic-war" 
 filename="goh-uozumi.jpg" 
 label="Article" 
 title="New Economic War　記事のタイトル" 

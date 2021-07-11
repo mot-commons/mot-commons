@@ -1,3 +1,15 @@
+/* gallery */
+.gallery {
+  column-count: 2;
+  column-gap: 6px;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+.gallery .item {
+  display: inline-block;
+  width: 100%;
+}
+
 /* button */
 .button {
   line-height: 1.4rem;

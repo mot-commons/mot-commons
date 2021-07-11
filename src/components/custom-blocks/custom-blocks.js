@@ -1,58 +1,15 @@
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import SimpleReactLightbox, { SRLWrapper } from "simple-react-lightbox"
 import * as s from "./custom-blocks.module.css"
+import { Fragment } from "react"
 
-export const Donorbox = ({ url }) => (
-  <React.Fragment>
-    <script src="https://donorbox.org/widget.js" paypalExpress="true"></script>
-    <iframe
-      allowpaymentrequest=""
-      frameborder="0"
-      height="900px"
-      name="donorbox"
-      scrolling="no"
-      seamless="seamless"
-      src={url}
-      style={{
-        "max-width": "500px",
-        "min-width": "250px",
-        "max-height": "none !important",
-      }}
-      width="100%"
-    ></iframe>
-  </React.Fragment>
-)
-// uses in .md
-// <Donorbox url="https://donorbox.org/embed/mot-commons-goh" />
-
-export const Kofi = ({ url, title }) => (
-  <React.Fragment>
-    <iframe
-      src={url}
-      style={{
-        border: "none",
-        width: "100%",
-        padding: "4px",
-        background: "none",
-        border: "1px solid #eee",
-        borderRadius: "6px",
-        boxShadow:
-          "0 2px 5px 0 rgba(100, 100, 100, 0.06), 0 2px 10px 0 rgba(100, 100, 100, 0.04)",
-      }}
-      height="712"
-      title={title}
-    ></iframe>
-  </React.Fragment>
-)
-// uses in .md
-// <Kofi url="https://ko-fi.com/goh_u/?hidefeed=true&widget=true&embed=true&preview=true" title="goh_u"/>
-
-export const Image = ({ filename, alt, style, classname }) => (
-  <StaticQuery
-    query={graphql`
+export const ImageQuery = () => {
+  return useStaticQuery(
+    graphql`
       query {
-        images: allFile(filter: { extension: { in: ["jpg", "png"] } }) {
+        images: allFile(filter: { extension: { in: ["jpg", "jpeg", "png"] } }) {
           edges {
             node {
               relativePath
@@ -66,40 +23,121 @@ export const Image = ({ filename, alt, style, classname }) => (
             }
           }
         }
+        thumbnails: allFile(
+          filter: { extension: { in: ["jpg", "jpeg", "png"] } }
+        ) {
+          edges {
+            node {
+              relativePath
+              name
+              childImageSharp {
+                gatsbyImageData(
+                  placeholder: BLURRED
+                  layout: CONSTRAINED
+                  width: 500
+                )
+              }
+            }
+          }
+        }
       }
-    `}
-    render={data => {
-      const tmp = data.images.edges.find(e => {
-        return e.node.relativePath.includes(filename)
-      })
-      //   console.log("image ", tmp.node)
-      if (!tmp) return
-      const image = getImage(tmp.node)
-      return (
+    `
+  )
+}
+
+export const Image = ({ filename, alt, style, large }) => {
+  const data = ImageQuery()
+  const tmp = data.images.edges.find(e => {
+    return e.node.relativePath.includes(filename)
+  })
+  // console.log("classname ", classa)
+  if (!tmp) return <p>no images</p>
+  const image = getImage(tmp.node)
+  const width = large ? "width-large" : ""
+  return (
+    <SimpleReactLightbox>
+      <SRLWrapper>
         <GatsbyImage
           image={image}
-          alt={alt || "an image"}
+          alt={alt || tmp.node.name}
           style={style}
-          className={classname}
+          className={width}
         />
-      )
-    }}
-  />
-)
+      </SRLWrapper>
+    </SimpleReactLightbox>
+  )
+}
 // uses in .md
-// <Image filename="MOT_Annual_floor_map-3p.jpg" alt="Floor Plan"/>
+// <Image filename="MOT_Annual_floor_map-3p.jpg" alt="Floor Plan" large />
 
-export const ImageLink = ({ url, self, filename, alt, style }) => (
+export const Gallery = ({ foldername, head }) => {
+  const data = ImageQuery()
+  const thumbnails = data.thumbnails.edges.filter(e => {
+    return e.node.relativePath.includes(foldername)
+  })
+  const images = data.images.edges.filter(e => {
+    return e.node.relativePath.includes(foldername)
+  })
+
+  if (!thumbnails) return <p>no images</p>
+
+  thumbnails.sort((a, b) => {
+    return a.node.name > b.node.name ? 1 : -1
+  })
+  images.sort((a, b) => {
+    return a.node.name > b.node.name ? 1 : -1
+  })
+
+  return (
+    <React.Fragment>
+      <SimpleReactLightbox>
+        <SRLWrapper>
+          {head && images[0] && (
+            <GatsbyImage
+              image={images[0].node.childImageSharp.gatsbyImageData}
+              alt={images[0].node.name}
+            />
+          )}
+
+          <div className={s.gallery}>
+            {thumbnails.map((e, index) => {
+              if (head && index == 0) return
+              return (
+                <div className={s.item}>
+                  <a
+                    href={
+                      images[index].node.childImageSharp.gatsbyImageData.images
+                        .fallback.src
+                    }
+                    key={e.node.name + "-gallery-idx-" + index}
+                  >
+                    <GatsbyImage
+                      image={e.node.childImageSharp.gatsbyImageData}
+                      alt={e.node.name}
+                    />
+                  </a>
+                </div>
+              )
+            })}
+          </div>
+        </SRLWrapper>
+      </SimpleReactLightbox>
+    </React.Fragment>
+  )
+}
+// <Gallery foldername="goh-uozumi/neweconomicwar-2020/acoin" />
+
+export const ImageLink = ({ url, self, filename, alt, style, large }) => (
   <a
     href={url}
     target={self ? "_self" : "_blank"}
     rel={!self && "noopener noreferrer"}
   >
-    <Image filename={filename} alt={alt} style={style} />
+    <Image filename={filename} alt={alt} style={style} large />
   </a>
 )
 // uses in .md
-//<LinkImage url="https://github.com/mot-commons/mot-commons/blob/main/content/assets/invisible-powers/MOT_Annual_floor_map%2B.pdf" blank filename="MOT_Annual_floor_map-3p.jpg" alt="Floor Plan"/>
+//<LinkImage url="https://github.com/mot-commons/mot-commons/blob/main/content/assets/invisible-powers/MOT_Annual_floor_map%2B.pdf" blank filename="MOT_Annual_floor_map-3p.jpg" alt="Floor Plan" large />
 
 export const Button = ({
   url,

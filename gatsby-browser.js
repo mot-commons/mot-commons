@@ -1,3 +1,6 @@
+import React from "react"
+import SimpleReactLightbox from "simple-react-lightbox"
+
 // custom typefaces
 import "typeface-montserrat"
 import "typeface-merriweather"
@@ -8,6 +11,10 @@ import "./src/style.css"
 
 // Highlighting for code blocks
 import "prismjs/themes/prism.css"
+
+export const wrapRootElement = ({ element }) => (
+  <SimpleReactLightbox>{element}</SimpleReactLightbox>
+)
 
 // // Loading an external JS file
 // const addScriptDonorboxEmbed = url => {
