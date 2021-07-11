@@ -10,7 +10,6 @@ import {
   ProductCard,
   Gallery,
 } from "./custom-blocks/custom-blocks"
-// import { Gallery } from "./custom-blocks/gallery.js"
 import { Donorbox, Kofi } from "./custom-blocks/donation.js"
 const shortcodes = {
   Donorbox,

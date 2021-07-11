@@ -15,10 +15,7 @@ export const ImageQuery = () => {
               relativePath
               name
               childImageSharp {
-                gatsbyImageData(
-                  layout: CONSTRAINED
-                  formats: [AUTO, WEBP, AVIF]
-                )
+                gatsbyImageData(layout: CONSTRAINED, formats: [AUTO, WEBP])
               }
             }
           }
