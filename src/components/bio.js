@@ -98,7 +98,7 @@ const Bio = ({ slugs, lang }) => {
     <aside>
       {/* .slice(0) .reverse() */}
       {posts?.map((post, index) => {
-        console.log(post)
+        // console.log(post)
         const avatar = getImage(post.frontmatter.avatar)
         return (
           <div
