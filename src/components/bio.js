@@ -9,6 +9,7 @@ import React, { useMemo } from "react"
 // import * as React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 // import { StaticImage } from "gatsby-plugin-image"
 
 const Bio = ({ slugs, lang }) => {
@@ -97,6 +98,7 @@ const Bio = ({ slugs, lang }) => {
     <aside>
       {/* .slice(0) .reverse() */}
       {posts?.map((post, index) => {
+        console.log(post)
         const avatar = getImage(post.frontmatter.avatar)
         return (
           <div
@@ -145,12 +147,10 @@ const Bio = ({ slugs, lang }) => {
                 </div>
               )}
             </div>
-            {post.html && (
-              <section
-                className="bio-text"
-                dangerouslySetInnerHTML={{ __html: post.html }}
-                itemProp="articleBody"
-              />
+            {post.body && (
+              <section className="bio-text">
+                <MDXRenderer>{post.body}</MDXRenderer>
+              </section>
             )}
           </div>
         )

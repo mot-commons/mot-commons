@@ -1,7 +1,7 @@
 import React from "react"
 import { StaticQuery, graphql } from "gatsby"
 
-export const Donorbox = ({ url }) => (
+export const donorbox = ({ url }) => (
   <React.Fragment>
     <script src="https://donorbox.org/widget.js" paypalExpress="true"></script>
     <iframe
@@ -22,9 +22,9 @@ export const Donorbox = ({ url }) => (
   </React.Fragment>
 )
 // uses in .md
-// <Donorbox url="https://donorbox.org/embed/mot-commons-goh" />
+// <donorbox url="https://donorbox.org/embed/mot-commons-goh" />
 
-export const Kofi = ({ url, title }) => (
+export const kofi = ({ url, title }) => (
   <React.Fragment>
     <iframe
       src={url}
@@ -44,4 +44,15 @@ export const Kofi = ({ url, title }) => (
   </React.Fragment>
 )
 // uses in .md
-// <Kofi url="https://ko-fi.com/goh_u/?hidefeed=true&widget=true&embed=true&preview=true" title="goh_u"/>
+// <kofi url="https://ko-fi.com/goh_u/?hidefeed=true&widget=true&embed=true&preview=true" title="goh_u"/>
+
+export const coinbase = ({ url, text }) => (
+  <div>
+    <a className="donate-with-crypto" href={url}>
+      {text}
+    </a>
+    <script src="https://commerce.coinbase.com/v1/checkout.js?version=201807"></script>
+  </div>
+)
+// uses in .md
+// <coinbase url="https://commerce.coinbase.com/checkout/963cdccb-50d1-4205-89c1-a2bc1b28401d" text="Donate with Crypto">

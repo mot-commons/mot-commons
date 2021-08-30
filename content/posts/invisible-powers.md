@@ -29,7 +29,7 @@ style="border:1px solid #ccc" />
 <!-- markdown
 [![Floor Map](../assets/invisible-powers/MOT_Annual_floor_map-3p.jpg "Floor Map")](https://github.com/mot-commons/mot-commons/blob/main/content/assets/invisible-powers/MOT_Annual_floor_map%2B.pdf) -->
 
-<Button 
+<button 
 url="https://github.com/mot-commons/mot-commons/blob/main/content/assets/invisible-powers/MOT_Annual_floor_map%2B.pdf" 
 text="会場で配布されたハンドアウトとフロアマップはこちら" 
 full />
@@ -48,7 +48,7 @@ full />
 
 展覧会の[公式ウェブサイト](https://www.mot-art-museum.jp/exhibitions/mot-annual-2020/)より転載
 
-<!-- <Button url="https://www.mot-art-museum.jp/exhibitions/mot-annual-2020/" text="展覧会の公式ウェブサイト" simple /> より転載 -->
+<!-- <button url="https://www.mot-art-museum.jp/exhibitions/mot-annual-2020/" text="展覧会の公式ウェブサイト" simple /> より転載 -->
 
 **若手作家の作品を中心に、現代美術の一側面を切り取り、問いかけや議論のはじまりを引き出すグループ展、MOT アニュアル。第 16 回目となる本展では、人や物を動かしている自然界や社会の中の不可視の力の作用に着目し、そのメカニズムを再構築しようと試みるアーティスト 5 組を紹介します。**
 
@@ -58,7 +58,7 @@ full />
 
 | 展覧会               | MOT アニュアル 2020 - 透明な力たち                                                                                                                   |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 公式サイト           | <Button url="https://www.mot-art-museum.jp/exhibitions/mot-annual-2020/" text="https://www.mot-art-museum.jp/exhibitions/mot-annual-2020/" simple /> |
+| 公式サイト           | <button url="https://www.mot-art-museum.jp/exhibitions/mot-annual-2020/" text="https://www.mot-art-museum.jp/exhibitions/mot-annual-2020/" simple /> |
 | 会期                 | 2020 年 11 月 14 日（土）－ 2021 年 2 月 14 日（日）                                                                                                 |
 | 会場                 | 東京都現代美術館 企画展示室 3F                                                                                                                       |
 | 作家                 | 片岡純也＋岩竹理恵，清水陽子，中島佑太，Goh Uozumi，久保ガエタン                                                                                     |
@@ -76,7 +76,7 @@ full />
 
 <Card 
 url="/about" 
-filename="goh-uozumi.jpg" 
+filename="tom.jpg" 
 label="Article" 
 title="記事のタイトル" 
 excerpt="asdfaoisdfj;aosijdf;aijsdo sdfja;osidfa sf;aij... se" 
@@ -85,7 +85,7 @@ self />
 
 <Card 
 url="https://yokoshimizu.com/" 
-filename="goh-uozumi.jpg" 
+filename="tom.jpg" 
 label="Portfolio - outside link" 
 title="Yoko Shimizu - Official Website" 
 excerpt="記事がない人はウェブサイトのリンクを貼ります" 
@@ -93,7 +93,7 @@ author="清水陽子" />
 
 <Card 
 url="/about" 
-filename="goh-uozumi.jpg" 
+filename="tom.jpg" 
 label="Article" 
 title="記事のタイトル" 
 excerpt="asdfaoisdfj;aosijdf;aijsdo sdfja;osidfa sf;aij... sasdfaoisdfj;aosijdf;aijsdo sdfja;osidfa sf;aij... seasdfaoisdfj;aosijdf;aijsdo sdfja;osidfa sf;aij... see" 
@@ -102,7 +102,7 @@ self />
 
 <Card 
 url="/goh-new-economic-war" 
-filename="goh-uozumi.jpg" 
+filename="tom.jpg" 
 label="Article" 
 title="New Economic War　記事のタイトル" 
 excerpt="このサイト内の記事へのリンクを貼る．idfa sf;aij... sasdfaoisdfj;aosijdf;aijsdo sdfja;osidfa sf;aij... seasdfaoisdfj;aosijdf;aijsdo sdfja;osidfa sf;aij... see" 
@@ -111,7 +111,7 @@ self />
 
 <Card 
 url="/about" 
-filename="goh-uozumi.jpg" 
+filename="tom.jpg" 
 label="Article" 
 title="記事のタイトル" 
 excerpt="asdfaoisdfj;aosijdf;aijsdo sdfja;osidfa sf;aij... se" 
@@ -120,11 +120,11 @@ self />
 
 | Connects           |                                                                                                                                                                                                                                                                                                                                                                                                                     |
 | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 片岡純也＋岩竹理恵 | <Button url="http://kataoka-iwatake.tank.jp/" text="Website: kataoka-iwatake.tank.jp" slim oblique /><Button url="https://www.instagram.com/ktok_iwtk/" text="Instagram: @ktok_iwtk" slim oblique />                                                                                                                                                                                                                |
-| 清水陽子           | <Button url="https://yokoshimizu.com/" text="Website: yokoshimizu.com" slim oblique /><br /><Button url="https://www.instagram.com/yokoshimizuart/" text="Instagram: @yokoshimizuart" slim oblique /><br /><Button url="https://twitter.com/yokoshimizuart" text="Twitter: @yokoshimizuart" slim oblique />                                                                                                         |
-| 中島佑太           | <Button url="https://nakajimayuta.net/" text="Website: nakajimayuta.net" slim oblique /><br /><Button url="https://www.instagram.com/nakajima0212/" text="Instagram : @nakajima0212" slim oblique /><br /><Button url="https://twitter.com/NAKAJIMAyuta" text="Twitter: @NAKAJIMAyuta" slim oblique /><br /><Button url="https://www.facebook.com/joyfulnakajima/" text="Facebook: @joyfulnakajima" slim oblique /> |
-| Goh Uozumi         | <Button url="https://goh.works/" text="Website: goh.works" slim oblique /><br /><Button url="https://www.instagram.com/goh_u/" text="Instagram: @goh_u" slim oblique /><br /><Button url="https://twitter.com/ghuzmi" text="Twitter: @ghuzmi" slim oblique /><br /><Button url="https://www.youtube.com/gohuozumi" text="Youtube: @gohuozumi" slim oblique />                                                       |
-| 久保ガエタン       | <Button url="https://gaetankubo.com/" text="Website: gaetankubo.com" slim oblique /><br /><Button url="https://www.instagram.com/gaetankubo/" text="Instagram: @gaetankubo" slim oblique /><br /><Button url="https://www.facebook.com/gaetan.kubo" text="Facebook: @gaetan.kubo" slim oblique /><br /><Button url="https://www.youtube.com/user/lfogae2" text="Youtube: @lfogae2" slim oblique />                  |
+| 片岡純也＋岩竹理恵 | <button url="http://kataoka-iwatake.tank.jp/" text="Website: kataoka-iwatake.tank.jp" slim oblique /><button url="https://www.instagram.com/ktok_iwtk/" text="Instagram: @ktok_iwtk" slim oblique />                                                                                                                                                                                                                |
+| 清水陽子           | <button url="https://yokoshimizu.com/" text="Website: yokoshimizu.com" slim oblique /><br /><button url="https://www.instagram.com/yokoshimizuart/" text="Instagram: @yokoshimizuart" slim oblique /><br /><button url="https://twitter.com/yokoshimizuart" text="Twitter: @yokoshimizuart" slim oblique />                                                                                                         |
+| 中島佑太           | <button url="https://nakajimayuta.net/" text="Website: nakajimayuta.net" slim oblique /><br /><button url="https://www.instagram.com/nakajima0212/" text="Instagram : @nakajima0212" slim oblique /><br /><button url="https://twitter.com/NAKAJIMAyuta" text="Twitter: @NAKAJIMAyuta" slim oblique /><br /><button url="https://www.facebook.com/joyfulnakajima/" text="Facebook: @joyfulnakajima" slim oblique /> |
+| Goh Uozumi         | <button url="https://goh.works/" text="Website: goh.works" slim oblique /><br /><button url="https://www.instagram.com/goh_u/" text="Instagram: @goh_u" slim oblique /><br /><button url="https://twitter.com/ghuzmi" text="Twitter: @ghuzmi" slim oblique /><br /><button url="https://www.youtube.com/gohuozumi" text="Youtube: @gohuozumi" slim oblique />                                                       |
+| 久保ガエタン       | <button url="https://gaetankubo.com/" text="Website: gaetankubo.com" slim oblique /><br /><button url="https://www.instagram.com/gaetankubo/" text="Instagram: @gaetankubo" slim oblique /><br /><button url="https://www.facebook.com/gaetan.kubo" text="Facebook: @gaetan.kubo" slim oblique /><br /><button url="https://www.youtube.com/user/lfogae2" text="Youtube: @lfogae2" slim oblique />                  |
 
 ### 各アーティストのインタビュー動画
 

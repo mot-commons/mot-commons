@@ -3,23 +3,24 @@ import { Link } from "gatsby"
 import { LocalizedLink, useLocalization } from "gatsby-theme-i18n"
 import { MDXProvider } from "@mdx-js/react"
 import {
-  Button,
+  button,
   Image,
   ImageLink,
   Card,
   ProductCard,
-  Gallery,
+  gallery,
 } from "./custom-blocks/custom-blocks"
-import { Donorbox, Kofi } from "./custom-blocks/donation.js"
+import { donorbox, kofi, coinbase } from "./custom-blocks/donation.js"
 const shortcodes = {
-  Donorbox,
-  Kofi,
-  Button,
+  donorbox,
+  kofi,
+  coinbase,
+  button,
   Image,
   ImageLink,
   Card,
   ProductCard,
-  Gallery,
+  gallery,
 }
 
 const Layout = ({ location, title, children }) => {

@@ -10,7 +10,7 @@ support: ""
 published: "true"
 ---
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/fullview/" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/fullview/" head />
 
 <!-- <Image filename="goh-uozumi/neweconomicwar-2020/overview.jpg" alt="New Economic War" large /> -->
 
@@ -20,7 +20,7 @@ published: "true"
 
 2020 年から 21 年にかけて，東京都現代美術館の「MOT アニュアル 2020 - 透明な力たち」展で発表された作品です．
 
-<Button 
+<button 
 url="https://mot-commons.org/invisible-powers/" 
 text="展覧会のページはこちら" 
  />
@@ -29,9 +29,9 @@ text="展覧会のページはこちら"
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/TquvVtl6RJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="margin-bottom:0px" class="width-large video"></iframe>
 
-<small className="caption-center">\*ディープフェイクで生成した公人（政治家）に似た顔が出るため，法的リスクを考慮して一部の作品シーンは美術館作成の記録映像から省かれている．</small>
+<small className="caption-center">ディープフェイクで生成した公人（政治家）に似た顔が出るため，法的リスクを考慮して一部の作品シーンは美術館作成の記録映像から省かれている．</small>
 
-## 仮想展示
+## 360° 展示
 
 <iframe src="/spatial-media/invisible-powers/goh-uozumi/index.html" title="Virtual Tour" width="100%" height="400px" className="width-large spatial" style="margin-bottom:0px"></iframe>
 
@@ -68,53 +68,53 @@ text="展覧会のページはこちら"
 
 ### 思考の質量
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/mass" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/mass" head />
 
 テキスト
 
 ### ACOIN
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/acoin" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/acoin" head />
 
 ### 15 Minutes
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/15min" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/15min" head />
 
 ### Welcome To Attention Economy
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/w-attention" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/w-attention" head />
 
 ### 社会的選択とその敵
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/socialchoice" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/socialchoice" head />
 
 ### A GAME
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/agame" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/agame" head />
 
 ### Virtual Virtual Coins
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/vvcoins" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/vvcoins" head />
 
 ### Finding Number
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/f-number" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/f-number" head />
 
 ### Deepblue
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/deepblue" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/deepblue" head />
 
 ### Basic Principle
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/b-principle" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/b-principle" head />
 
 ### Finding Symbol
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/f-symbol" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/f-symbol" head />
 
 ### Easter egg
 
-<Gallery foldername="goh-uozumi/neweconomicwar-2020/easteregg" head />
+<gallery foldername="goh-uozumi/neweconomicwar-2020/easteregg" head />
 
 #### "AI Art is almost like a scam"
 
@@ -125,3 +125,11 @@ text="展覧会のページはこちら"
 ---
 
 ＊ページ作成中．．．
+
+---
+
+## Support
+
+<kofi url="https://ko-fi.com/goh_u/?hidefeed=true&widget=true&embed=true&preview=true" title="goh_u"/>
+
+<coinbase url="https://commerce.coinbase.com/checkout/963cdccb-50d1-4205-89c1-a2bc1b28401d" text="Donate with Crypto" />

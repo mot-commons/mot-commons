@@ -67,7 +67,7 @@ export const Image = ({ filename, alt, style, large }) => {
 // uses in .md
 // <Image filename="MOT_Annual_floor_map-3p.jpg" alt="Floor Plan" large />
 
-export const Gallery = ({ foldername, head }) => {
+export const gallery = ({ foldername, head }) => {
   const data = ImageQuery()
   const thumbnails = data.thumbnails.edges.filter(e => {
     return e.node.relativePath.includes(foldername)
@@ -100,13 +100,15 @@ export const Gallery = ({ foldername, head }) => {
             {thumbnails.map((e, index) => {
               if (head && index == 0) return
               return (
-                <div className={s.item}>
+                <div
+                  className={s.item}
+                  key={e.node.name + "-gallery-idx-" + index}
+                >
                   <a
                     href={
                       images[index].node.childImageSharp.gatsbyImageData.images
                         .fallback.src
                     }
-                    key={e.node.name + "-gallery-idx-" + index}
                   >
                     <GatsbyImage
                       image={e.node.childImageSharp.gatsbyImageData}
@@ -136,7 +138,7 @@ export const ImageLink = ({ url, self, filename, alt, style, large }) => (
 // uses in .md
 //<LinkImage url="https://github.com/mot-commons/mot-commons/blob/main/content/assets/invisible-powers/MOT_Annual_floor_map%2B.pdf" blank filename="MOT_Annual_floor_map-3p.jpg" alt="Floor Plan" large />
 
-export const Button = ({
+export const button = ({
   url,
   text,
   self,
