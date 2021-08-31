@@ -3,7 +3,7 @@ title: New Economic War,　Goh Uozumi
 slug: /goh-new-economic-war/
 date: "2021-02-01"
 description: Goh Uozumiが，「MOTアニュアル2020 - 透明な力たち」展で発表した作品の《New Economic War》について
-image: ../assets/invisible-powers/motannual2020-top.jpg
+image: ../assets/goh-uozumi/neweconomicwar-2020/new-economic-war-4k-lite.jpg
 author: Goh Uozumi, /goh-uozumi/
 translators: "null"
 support: ""
