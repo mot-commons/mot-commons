@@ -32,6 +32,7 @@ const SEO = ({ description, lang, meta, title, image, canonical }) => {
   const metaDescription = description || site.siteMetadata.description
   const defaultTitle = site.siteMetadata?.title
   const imageUrl = image || ""
+  // console.log("imgUrl ", imageUrl)
 
   //get twitter id from the url in sitemetada
   let twitterId = site.siteMetadata?.socials.filter(function (item, index) {
@@ -69,7 +70,7 @@ const SEO = ({ description, lang, meta, title, image, canonical }) => {
         },
         {
           property: `og:image`,
-          content: "https://mot-commons" + imageUrl,
+          content: "https://mot-commons.org" + imageUrl,
         },
         // {
         //   name: `twitter:creator`,
@@ -90,7 +91,7 @@ const SEO = ({ description, lang, meta, title, image, canonical }) => {
         },
         {
           name: `twitter:twitter:image`,
-          content: "https://mot-commons" + imageUrl,
+          content: "https://mot-commons.org" + imageUrl,
         },
       ].concat(meta)}
     />
