@@ -24,7 +24,7 @@ published: "true"
 
 ## Video
 
-test
+translating...
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/TquvVtl6RJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="margin-bottom:0px" class="width-large video"></iframe>
 
@@ -46,9 +46,9 @@ test
 
 ---
 
-本作は，人間の意識や思想，他者との関係，行動特性，社会制度のような，質量を持たないものたちを新しい資源とみなして，それを運用するプロトコル，即ち広義の経済システムを成り立たせるものが，世界の在り方をどう変えるのかという問いを扱います．
+This work considers mass-less things such as human consciousness, thought, relationships with others, behavioral characteristics, and social institutions as _New Resources,_ and explores the question of how the protocols for operating them, that is, the things that make up an economic system in the broad sense, will change the way the world works.
 
-「資源」といっても，そのままでは目に見えず，石油や食料などのように手に持って重みを感じられるわけではありません．しかしそれらが富を生み，人々の意思を動かし，社会を，我々の生き方を規定します．
+_New Resources_ are invisible in their own right, and cannot be held and felt like oil or food. However, they create wealth, drive people's will, and define society and the way we live.
 
 今日の社会では，人間のあらゆるデータは機械学習の素材となり，その成果は人間の労働や判断を代替する方向に進んでいます．また今日の電子技術は，社会契約が不要の電子貨幣が象徴するように低いコストかつ高い自由度で報酬系を操作できる人間と社会の深層まで浸食し，ミクロにはインセンティヴ設計によって個人の選択を誘導し，マクロには米ドルを兵器とした世界支配のように他国を制御するための次世代の覇権闘争へと発展するでしょう．<br /> 日常的な例では，超効率的かつ大規模な監視システムは人々を潜在的に脅迫して思考様式を変え，ソーシャルメディアはユーザーの嗜好や人間関係などを解析して広告に利用し，情報世界の水面下での組織的な世論操作やサイバー攻撃は選挙に影響する大衆扇動や分断を行います．そもそも“民主的”に制定された投票方式や選挙制度自体によって権力を固定化するよう民意の意図的な偏りを作られていても，数理的公正さの真実に多数の人々が気付くことは困難です．<br /> 我々の意思決定の背後で動いているものはあまりに多く，複雑化し，不可視です．
 
