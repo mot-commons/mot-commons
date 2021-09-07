@@ -28,7 +28,9 @@ translating...
 
 <iframe width="100%" height="315" src="https://www.youtube.com/embed/TquvVtl6RJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="margin-bottom:0px" class="width-large video"></iframe>
 
-<small classname="caption-center">ディープフェイクで生成した公人（政治家）に似た顔が出るため，法的リスクを考慮して一部の作品シーンは美術館作成の記録映像から省かれている．</small>
+<br /><br />
+
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/c3VU_ij42dI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" style="margin-bottom:0px" class="width-large video"></iframe>
 
 ## 仮想展示
 
